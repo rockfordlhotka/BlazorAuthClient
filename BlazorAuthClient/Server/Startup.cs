@@ -14,14 +14,6 @@ namespace BlazorAuthClient.Server
     // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddAuthentication(options =>
-      {
-        options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-        options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-      })
-        .AddCookie();
-      services.AddRazorPages();
       services.AddMvc();
       services.AddResponseCompression(opts =>
       {
@@ -45,9 +37,6 @@ namespace BlazorAuthClient.Server
       app.UseClientSideBlazorFiles<Client.Startup>();
 
       app.UseRouting();
-
-      app.UseAuthentication();
-      app.UseAuthorization();
 
       app.UseEndpoints(endpoints =>
       {
