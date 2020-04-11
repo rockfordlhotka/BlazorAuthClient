@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject CurrentUserService CurrentUserService
 
 <div class="sidebar">
   <NavMenu />
@@ -14,6 +15,9 @@
       <NotAuthorized>
         <a href="Login">Log in</a>
       </NotAuthorized>
+      <Authorizing>
+        Authorizing...
+      </Authorizing>
     </AuthorizeView>
     <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
   </div>
@@ -22,3 +26,12 @@
     @Body
   </div>
 </div>
+
+@code {
+  protected override void OnInitialized()
+  {
+    CurrentUserService.CurrentUserChanged += 
+      (sender, args) => StateHasChanged();
+    base.OnInitialized();
+  }
+}

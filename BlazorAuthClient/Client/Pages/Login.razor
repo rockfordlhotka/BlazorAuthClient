@@ -48,7 +48,6 @@
         foreach (var item in userinfo.Claims)
           identity.AddClaim(new Claim(item.ClaimType, item.Claim));
         CurrentUserService.CurrentUser = new System.Security.Claims.ClaimsPrincipal(identity);
-        StateHasChanged();
         NavigationManager.NavigateTo("/");
       }
       else

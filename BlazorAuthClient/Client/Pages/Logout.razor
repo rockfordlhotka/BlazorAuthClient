@@ -9,7 +9,6 @@
     var identity = new ClaimsIdentity();
     CurrentUserService.CurrentUser = new System.Security.Claims.ClaimsPrincipal(identity);
     base.OnInitialized();
-    StateHasChanged();
     NavigationManager.NavigateTo("/");
   }
 }
