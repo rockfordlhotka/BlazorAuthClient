@@ -26,12 +26,3 @@
     @Body
   </div>
 </div>
-
-@code {
-  protected override void OnInitialized()
-  {
-    CurrentUserService.CurrentUserChanged += 
-      (sender, args) => StateHasChanged();
-    base.OnInitialized();
-  }
-}
