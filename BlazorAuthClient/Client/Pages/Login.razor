@@ -12,25 +12,36 @@
   <div class="alert-danger">@ErrorText</div>
 }
 
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Username</td>
-      <td><input @bind="Credentials.Username" /></td>
-    </tr>
-    <tr>
-      <td>Password</td>
-      <td><input @bind="Credentials.Password" type="password" /></td>
-    </tr>
-  </tbody>
-</table>
-<button @onclick="LoginUser">Login</button>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Username</td>
+        <td><input @bind="Credentials.Username" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input @bind="Credentials.Password" type="password" /></td>
+      </tr>
+    </tbody>
+  </table>
+  <button @onclick="LoginUser">Login</button>
+  <br/>
+</div>
+
+<div>
+  <p>Credentials to try:</p>
+  <ul>
+    <li>rocky, mypassword</li>
+    <li>andrew, otherpassword</li>
+  </ul>
+</div>
 
 @code {
   private UserCredentials Credentials { get; set; } = new UserCredentials();
