@@ -1,3 +1,5 @@
-# BlazorAuthClient
+# Using CSLA 5: Blazor and WebAssembly sample code
 
-Sample from Using CSLA: Blazor and CSLA .NET book
+This content has been moved to its new home at
+
+https://github.com/MarimerLLC/BlazorBook
